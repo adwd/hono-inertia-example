@@ -6,7 +6,7 @@ export default function About({ title }: { title: string }) {
     <Layout>
       <Head title="About" />
       <h1>{title}</h1>
-      <p>Hono + Inertia.js on Cloudflare Workers.</p>
+      <p>Hono + Inertia.js on Node.js!</p>
     </Layout>
   )
 }

@@ -3,12 +3,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "$npm_execpath run build && vite preview",
-    "deploy": "$npm_execpath run build && wrangler deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "build": "vite build && vite build --mode server",
+    "start": "node dist/index.js",
+    "preview": "$npm_execpath run build && $npm_execpath run start"
   },
   "dependencies": {
+    "@hono/node-server": "^2.0.0",
     "@hono/react-renderer": "^1.0.1",
     "@hono/zod-validator": "^0.7.6",
     "@inertiajs/react": "^3.0.3",
@@ -18,11 +18,13 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.2.3",
+    "@hono/vite-build": "^1.11.1",
+    "@hono/vite-dev-server": "^0.25.3",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "vite": "^8.0.10",
-    "vite-ssr-components": "^0.5.2",
-    "wrangler": "^4.17.0"
+    "vite-ssr-components": "^0.5.2"
   }
 }

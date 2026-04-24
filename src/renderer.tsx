@@ -1,6 +1,6 @@
 import type { MiddlewareHandler } from 'hono'
 import { renderToString } from 'react-dom/server'
-import { Link, Script, ViteClient } from 'vite-ssr-components/react'
+import { Link, ReactRefresh, Script, ViteClient } from 'vite-ssr-components/react'
 
 type PageObject = {
   component: string
@@ -21,6 +21,7 @@ const Document = ({ page }: { page: PageObject }) => (
   <html>
     <head>
       <ViteClient />
+      <ReactRefresh />
       <Script src="/src/client.tsx" />
       <Link href="/src/style.css" rel="stylesheet" />
     </head>
