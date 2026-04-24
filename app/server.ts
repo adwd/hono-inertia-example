@@ -59,5 +59,9 @@ app.get('/posts/:id', (c) => {
   }
   return c.render('Posts/Show', { post })
 })
+  
+app.notFound((c) => {
+  return c.render('common/NotFound')
+})
 
 export default app
