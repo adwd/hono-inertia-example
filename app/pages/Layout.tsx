@@ -9,6 +9,7 @@ export default function Layout({ children }: PropsWithChildren) {
           <Link href="/">Home</Link>
           <Link href="/posts">Posts</Link>
           <Link href="/about">About</Link>
+          <Link href="/message">Message</Link>
           <Link href="/not-found">Not Found</Link>
         </nav>
       </header>

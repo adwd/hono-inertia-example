@@ -59,6 +59,8 @@ app.get('/posts/:id', (c) => {
   }
   return c.render('Posts/Show', { post })
 })
+
+app.get('/message', (c) => c.render('Message', { message: 'Hello, World!' }))
   
 app.notFound((c) => {
   return c.render('common/NotFound')
