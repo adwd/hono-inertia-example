@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/react'
-import Layout from './Layout'
+import Layout from './layout'
 import { useState } from 'react'
 
 export default function Message({ message }: { message: string }) {

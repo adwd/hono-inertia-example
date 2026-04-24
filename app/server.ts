@@ -23,11 +23,11 @@ const app = new Hono()
 
 app.use(renderer())
 
-app.get('/', (c) => c.render('Home', { message: 'Hono × Inertia' }))
-app.get('/about', (c) => c.render('About', { title: 'About' }))
+app.get('/', (c) => c.render('home', { message: 'Hono × Inertia' }))
+app.get('/about', (c) => c.render('about', { title: 'About' }))
 
-app.get('/posts', (c) => c.render('Posts/Index', { posts }))
-app.get('/posts/new', (c) => c.render('Posts/New'))
+app.get('/posts', (c) => c.render('posts/index', { posts }))
+app.get('/posts/new', (c) => c.render('posts/new'))
 
 app.post(
   '/posts',
@@ -41,7 +41,7 @@ app.post(
       if (typeof key === 'string' && !errors[key]) errors[key] = issue.message
     }
     c.status(422)
-    return c.render('Posts/New', { errors })
+    return c.render('posts/new', { errors })
   }),
   (c) => {
     const { title, body } = c.req.valid('json')
@@ -57,13 +57,13 @@ app.get('/posts/:id', (c) => {
   if (!post) {
     return c.notFound()
   }
-  return c.render('Posts/Show', { post })
+  return c.render('posts/show', { post })
 })
 
-app.get('/message', (c) => c.render('Message', { message: 'Hello, World!' }))
+app.get('/message', (c) => c.render('message', { message: 'Hello, World!' }))
   
 app.notFound((c) => {
-  return c.render('common/NotFound')
+  return c.render('common/not-found')
 })
 
 export default app

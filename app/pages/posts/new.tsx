@@ -1,5 +1,5 @@
 import { Head, useForm } from '@inertiajs/react'
-import Layout from '../Layout'
+import Layout from '../layout'
 
 export default function New() {
   const { data, setData, post, processing, errors } = useForm({

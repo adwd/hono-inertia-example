@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/react'
-import Layout from '../Layout'
+import Layout from '../layout'
 
 export default function NotFound() {
   return (
