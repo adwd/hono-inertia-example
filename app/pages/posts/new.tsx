@@ -20,7 +20,11 @@ export default function New() {
       >
         <label>
           <span>Title</span>
-          <input type="text" value={data.title} onChange={(e) => setData('title', e.target.value)} />
+          <input
+            type="text"
+            value={data.title}
+            onChange={(e) => setData('title', e.target.value)}
+          />
           {errors.title && <small className="error">{errors.title}</small>}
         </label>
         <label>

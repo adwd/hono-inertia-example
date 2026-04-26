@@ -8,11 +8,11 @@ export default function Message({ message }: { message: string }) {
     <Layout>
       <Head title="Message" />
       <h1>{message}</h1>
-          <p>This is a message page.</p>
-          <div>
-              <h2>Count: {count}</h2>
-              <button onClick={() => setCount(count + 1)}>Increment</button>
-          </div>
+      <p>This is a message page.</p>
+      <div>
+        <h2>Count: {count}</h2>
+        <button onClick={() => setCount(count + 1)}>Increment</button>
+      </div>
     </Layout>
   )
 }
