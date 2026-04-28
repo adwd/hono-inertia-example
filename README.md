@@ -95,6 +95,8 @@ INCLUDE_TAGS=Posts
 
 これにより、OpenAPIから生成されたposts API toolsをCodexから利用できます。
 
+![CodexからMCP toolとしてposts APIを利用している例](./mcp_example.png)
+
 ## Scripts
 
 ```txt
