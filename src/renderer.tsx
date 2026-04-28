@@ -61,6 +61,11 @@ export function renderer(options: { version?: string | null } = {}): MiddlewareH
         return c.json(page)
       }
 
+      if (c.req.header('Accept')?.includes('application/json')) {
+        c.header('Vary', 'Accept, X-Inertia')
+        return c.json(props)
+      }
+
       const ssr = await renderPage(page)
 
       return c.html(renderDocument(page, ssr))
