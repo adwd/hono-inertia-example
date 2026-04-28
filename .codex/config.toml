@@ -1,0 +1,26 @@
+[mcp_servers.hono-inertia-example-openapi]
+command = "uvx"
+args = ["awslabs.openapi-mcp-server@latest"]
+startup_timeout_sec = 30
+tool_timeout_sec = 60
+enabled = true
+
+[mcp_servers.hono-inertia-example-openapi.env]
+API_NAME = "hono-inertia-example"
+API_BASE_URL = "http://localhost:3000"
+API_SPEC_URL = "http://localhost:3000/openapi.json"
+INCLUDE_TAGS = "Posts"
+LOG_LEVEL = "ERROR"
+ENABLE_PROMETHEUS = "false"
+ENABLE_OPERATION_PROMPTS = "true"
+UVICORN_TIMEOUT_GRACEFUL_SHUTDOWN = "5.0"
+UVICORN_GRACEFUL_SHUTDOWN = "true"
+
+[mcp_servers.hono-inertia-example-openapi.tools.listPosts]
+approval_mode = "approve"
+
+[mcp_servers.hono-inertia-example-openapi.tools.createPost]
+approval_mode = "approve"
+
+[mcp_servers.hono-inertia-example-openapi.tools.showPost]
+approval_mode = "approve"
