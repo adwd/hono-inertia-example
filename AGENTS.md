@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This is a TypeScript ESM app using Hono, Inertia, React, and Vite. Server-side routes and in-memory sample data live in `app/`, with the Hono entry point at `app/server.ts`. Inertia page components are under `app/pages/`; shared page chrome is in `app/pages/Layout.tsx`, and post pages are grouped in `app/pages/Posts/`. Client bootstrapping and global styles live in `src/client.tsx`, `src/renderer.tsx`, and `src/style.css`. Static assets belong in `public/`.
+This is a TypeScript ESM app using Hono, Inertia, React, and Vite. Server-side routes and in-memory sample data live in `app/`, with the Hono entry point at `app/server.ts`. The Inertia HTML shell is in `app/root-view.tsx`. Inertia page components are under `app/pages/`; shared page chrome is in `app/pages/Layout.tsx`, and post pages are grouped in `app/pages/Posts/`. Client bootstrapping and global styles live in `src/client.tsx` and `src/style.css`. Static assets belong in `public/`.
 
 ## Build, Test, and Development Commands
 

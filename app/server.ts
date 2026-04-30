@@ -1,11 +1,12 @@
-import { Hono } from 'hono'
+import { Hono, type NotFoundResponse } from 'hono'
+import { inertia } from '@hono/inertia'
 import { openAPIRouteHandler } from 'hono-openapi'
 import { postsApp } from './posts'
-import { renderer } from '../src/renderer'
+import { rootView } from './root-view'
 
 const app = new Hono()
 
-app.use(renderer())
+app.use(inertia({ rootView }))
 
 app.get('/', (c) => c.render('home', { message: 'Hono × Inertia' }))
 app.get('/about', (c) => c.render('about', { title: 'About' }))
@@ -40,7 +41,7 @@ app.notFound((c) => {
       code: 'not_found',
       message: 'Not Found'
     }
-  })
+  }) as unknown as NotFoundResponse
 })
 
 export default app

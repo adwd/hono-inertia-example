@@ -14,8 +14,8 @@
     "preview": "$npm_execpath run build && $npm_execpath run start"
   },
   "dependencies": {
+    "@hono/inertia": "^0.2.0",
     "@hono/node-server": "^2.0.0",
-    "@hono/react-renderer": "^1.0.1",
     "@hono/standard-validator": "^0.2.2",
     "@inertiajs/react": "^3.0.3",
     "hono": "^4.12.14",
